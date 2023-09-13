@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <link rel="stylesheet" href="style.css">
+ 
+ <style>
+    hr{
+        height:10px;
+        transition: 2s;
+    }
+ </style>
+</head>
+<body>
+    <hr>
+    <h1>Try to get idea about you password type</h1>
+      Password<div id="pass" >
+        <input type="text" placeholder="Enter your Password" class="name">
+        <!-- <button class="clk" onin="lck()" type="submit">Sumbit</button> -->
+
+      </div> 
+      <h1></h1>  
+    
+</body>
+<script>
+let ref = '!@#$%*&'
+let ref2 = '1234567890'
+document.getElementsByClassName('name')[0].addEventListener('input',lck)
+
+function lck() {
+    document.getElementsByTagName('hr')[0].classList=''
+
+    let password = document.getElementsByClassName('name')[0].value
+    let res = ""
+    let count = 0;
+    let count2 = 0;
+    console.log('lck fun')
+    for(i in ref){
+        if(password.includes(ref[i])){
+             
+            count+=1
+        }
+        if(password.includes(ref2[i])){
+
+           count2+=1
+        }
+    }
+    console.log(count)
+    console.log(count2)
+
+if(count>=2 && count2>=3){
+        document.getElementsByTagName('hr')[0].classList.add('hrr2')
+        document.getElementsByTagName('h1')[0].textContent='Strong'
+        console.log('count == 2')
+
+    }
+    else if(count===1||(count2>=1&&count2<=3)){
+    document.getElementsByTagName('hr')[0].classList.add('hrr')
+    document.getElementsByTagName('h1')[0].textContent= 'Its ok to Use'
+    console.log('count == 1')
+
+    }
+else if(count===0){
+    document.getElementsByTagName('hr')[0].classList.add('hrr3')
+        document.getElementsByTagName('h1')[0].textContent='Poor'
+        console.log('count == 0')
+}
+
+}
+</script>
+</html>

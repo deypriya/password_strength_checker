@@ -1,0 +1,21 @@
+.hrr{
+    background-color: orange;
+    width: 50%;
+}
+.hrr2{
+    background-color: green;
+    width: 100%;
+}
+.hrr3{
+    background-color: red;
+    width: 30%;
+}
+h1{
+    color: blueviolet;
+}
+button{
+    background-color: aqua;
+}
+#pass{
+    color: chartreuse;
+}
